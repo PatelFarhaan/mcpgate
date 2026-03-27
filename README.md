@@ -2,6 +2,8 @@
 
 An ultra-fast, open-source API Key lifecycle and verification microservice. Built specifically to secure Model Context Protocol (MCP) servers and AI Agents.
 
+[View Architecture Diagram (Interactive Excalidraw)](https://excalidraw.com/#json=-ebvXUE2nHevKVYDBcj_e,X-rbbo_9Dy03qt7HMPN0-g)
+
 ## Why MCPGate?
 
 As AI agents (like Claude Desktop, Cursor, etc.) increasingly connect to remote SaaS applications via the Model Context Protocol, developers need a way to issue secure, scoped API keys to their users. 
