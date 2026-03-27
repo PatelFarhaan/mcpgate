@@ -2,8 +2,6 @@
 
 An ultra-fast, open-source API Key lifecycle and verification microservice. Built specifically to secure Model Context Protocol (MCP) servers and AI Agents.
 
-[View Architecture Diagram (Interactive Excalidraw)](https://excalidraw.com/#json=tK8iF6UUa-ziKUT3b1JM1,_xTbArkB3vcsUSEqcbbASA)
-
 <p align="center">
   <img src="./excalidraw/architecture.svg" alt="MCPGate Architecture" />
 </p>
