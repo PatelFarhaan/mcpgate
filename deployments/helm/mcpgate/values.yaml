@@ -1,0 +1,71 @@
+replicaCount: 1
+
+image:
+  repository: ghcr.io/patelfarhaan/mcpgate
+  tag: latest
+  pullPolicy: IfNotPresent
+
+config:
+  keyPrefix: "mcp_sk_"
+  corsOrigins: "https://app.example.com"
+
+# -- Name of an existing K8s Secret containing all sensitive env vars.
+# Required keys: DATABASE_URL, ADMIN_API_KEY
+#
+# Example:
+#   kubectl create secret generic mcpgate-secrets \
+#     --from-literal=DATABASE_URL="postgresql+asyncpg://user:pass@host:5432/mcpgate" \
+#     --from-literal=ADMIN_API_KEY="$(openssl rand -base64 32)"
+#
+# Then set: existingSecret: mcpgate-secrets
+existingSecret: ""
+
+service:
+  type: ClusterIP
+  port: 8000
+
+ingress:
+  enabled: false
+  className: nginx
+  host: mcpgate.example.com
+  annotations: {}
+  tls: false
+  tlsSecretName: ""
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 64Mi
+  limits:
+    cpu: 250m
+    memory: 128Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 70
+  targetMemoryUtilizationPercentage: 80
+
+podDisruptionBudget:
+  enabled: false
+  minAvailable: 1
+
+securityContext:
+  runAsNonRoot: true
+  runAsUser: 1000
+  runAsGroup: 1000
+  fsGroup: 1000
+
+containerSecurityContext:
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: true
+  capabilities:
+    drop:
+      - ALL
+
+topologySpreadConstraints:
+  enabled: true
+  maxSkew: 1
+  topologyKey: kubernetes.io/hostname
+  whenUnsatisfiable: DoNotSchedule
