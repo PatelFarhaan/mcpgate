@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.1](https://github.com/gatesuite/mcpgate/compare/v0.2.0...v0.2.1) (2026-04-16)
+
+
+### Bug Fixes
+
+* **ci:** bypass npm cache in docs workflow to fix rollup linux binary error ([52044e9](https://github.com/gatesuite/mcpgate/commit/52044e970f7805ef37ad5f2542e188405b034866))
+* **ci:** use npm install in docs workflow to fix cross-platform rollup binary issue ([d541b40](https://github.com/gatesuite/mcpgate/commit/d541b4055e7e043edd483244bec915730df018fb))
+
 ## [0.2.0](https://github.com/gatesuite/mcpgate/compare/v0.1.0...v0.2.0) (2026-04-16)
 
 
