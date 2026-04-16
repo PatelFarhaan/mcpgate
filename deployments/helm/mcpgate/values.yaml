@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: ghcr.io/patelfarhaan/mcpgate
+  repository: ghcr.io/gatesuite/mcpgate
   tag: latest
   pullPolicy: IfNotPresent
 
