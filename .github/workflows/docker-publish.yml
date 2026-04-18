@@ -12,8 +12,13 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
+  test:
+    name: E2E gate
+    uses: ./.github/workflows/e2e.yml
+
   docker:
     name: Docker Image (multi-arch)
+    needs: test
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -56,6 +61,7 @@ jobs:
 
   helm:
     name: Helm Chart (OCI)
+    needs: test
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
     permissions:

@@ -10,7 +10,13 @@ permissions:
   pull-requests: write
 
 jobs:
+  test:
+    name: E2E gate
+    uses: ./.github/workflows/e2e.yml
+
   release-please:
+    name: Release Please
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: googleapis/release-please-action@v4
