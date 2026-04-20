@@ -1,8 +1,26 @@
-# MCPGate
+<p align="center">
+  <h1 align="center">MCPGate</h1>
+  <p align="center">
+    Ultra-fast API key lifecycle and verification service for MCP servers and AI agents.
+    <br />
+    Deploy as a sidecar. Secure your AI infrastructure in minutes.
+  </p>
+</p>
 
-**Ultra-fast API key lifecycle and verification service for MCP servers and AI agents.**
+<p align="center">
+  <a href="https://github.com/gatesuite/mcpgate/releases"><img src="https://img.shields.io/github/v/release/gatesuite/mcpgate" alt="Latest Release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
+  <a href="https://github.com/gatesuite/mcpgate/actions/workflows/e2e.yml"><img src="https://img.shields.io/github/actions/workflow/status/gatesuite/mcpgate/e2e.yml?branch=main&label=CI" alt="CI Status"></a>
+  <a href="https://ghcr.io/gatesuite/mcpgate"><img src="https://img.shields.io/badge/docker-ghcr.io%2Fgatesuite%2Fmcpgate-blue?logo=docker&logoColor=white" alt="Docker Image"></a>
+  <a href="https://ghcr.io/gatesuite/mcpgate"><img src="https://img.shields.io/badge/image%20size-~50MB-brightgreen" alt="Image Size"></a>
+  <a href="https://github.com/gatesuite/mcpgate/stargazers"><img src="https://img.shields.io/github/stars/gatesuite/mcpgate?style=social" alt="GitHub Stars"></a>
+</p>
 
-> Plug-and-play machine authorization — deploy as a sidecar, secure your AI infrastructure in minutes.
+---
+
+Welcome to the repository for [MCPGate](https://gatesuite.github.io/mcpgate/) — a purpose-built API key lifecycle and verification service for MCP servers and AI agents. This repo contains the source for the MCPGate service, a Helm chart for Kubernetes, Docker Compose configs for local development, and a full E2E test suite. Please review the [Why MCPGate?](#why-mcpgate) section below for more details.
+
+---
 
 <p align="center">
   <img src="./excalidraw/architecture.svg" alt="MCPGate Architecture" />
@@ -43,6 +61,23 @@ We looked at what's already out there:
 **When to use MCPGate:** You're building an MCP server or AI tool that accepts programmatic requests and need a complete key management solution — issuance, verification, scopes, expiry, audit — without writing any of it yourself.
 
 **When not to:** You need OAuth flows, SSO, MFA, or human login UI. Use AuthGate, Auth0, Clerk, or similar for that — and run MCPGate alongside it for machine keys.
+
+---
+
+## Table of Contents
+
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [Environment Variables](#environment-variables)
+- [Integration Guide](#integration-guide)
+- [API Reference](#api-reference)
+- [Managing Keys](#managing-keys)
+- [Deployment](#deployment)
+- [Tech Stack](#tech-stack)
+- [Architecture](#architecture)
+- [Project Structure](#project-structure)
+- [Security](#security)
+- [Release Process](#release-process)
 
 ---
 
@@ -629,10 +664,4 @@ MCPGate uses [release-please](https://github.com/googleapis/release-please) for 
 
 ---
 
-## Documentation
-
-Full documentation is available at **[gatesuite.github.io/mcpgate](https://gatesuite.github.io/mcpgate/)**.
-
----
-
-© 2026 MCPGate
+*MIT License. See [LICENSE](LICENSE) for details.*
